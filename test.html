@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS -->
+    <!-- load up bootstrap and add some spacing -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        body         { padding-top:50px; }
+        form   		 { margin-bottom:50px; }
+    </style>
+
+    <!-- JS -->
+    <!-- load up angular and our custom script -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<!-- apply our angular app and controller -->
+<body ng-app="formApp" ng-controller="formController">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+    <h2>Angular Checkboxes and Radio Buttons</h2>
+
+    <form>
+    
+        <!-- NAME INPUT -->
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" ng-model="formData.name">
+        </div>
+        
+        <!-- =============================================== -->
+        <!-- ALL OUR CHECKBOXES AND RADIO BOXES WILL GO HERE -->
+        <!-- =============================================== -->
+        
+        <!-- SUBMIT BUTTON (DOESNT DO ANYTHING) -->
+        <button type="submit" class="btn btn-danger btn-lg">Send Away!</button>
+        
+    </form>
+    
+    <!-- SHOW OFF OUR FORMDATA OBJECT -->
+    <h2>Sample Form Object</h2>
+    <pre>
+        {{ formData }}
+    </pre>
+    
+</div>
+</body>
+</html>

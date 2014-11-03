@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+
+body {
+	margin:0;
+	/*padding:2% 400px 2% 400px;*/
+	display:inline-block;
+	background-color: #FFF;
+}
+.container {
+	margin:auto;
+}
+#phone {
+	border:1px solid #00000;
+	-moz-border-radius:50px;
+	border-radius:50px;
+	/*width:350px;*/
+	padding: 10px 10px 10px 10px;
+	background-color: #AAAAAA;
+	-moz-border-radius:50px;
+	border-radius:50px;
+}
+#outerPhone {
+	padding: 100px 30px 40px 30px;
+	background-color: #000;
+	-moz-border-radius:50px;
+	border-radius:50px;
+}
+#content {
+	background-color:#FFF;
+	height:500px;
+	overflow:auto;
+}
+.notification {
+	background-color: #000;
+	height:50px;
+}
+.home {
+	background-color: #00FF00;
+}
+.work {
+	background-color: #FF0000;
+}
+.street {
+	background-color: #0000FF;
+}
+.busy {
+	background-color: #00AAAA;
+}
