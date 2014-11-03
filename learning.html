@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>SoulShepherd - Learning</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SoulShepherd Prototype">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="notification.js"></script>
+    <script src="userInput.js"></script>
+</head>
+
+<body ng-controller="form-controller">
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6" id="menu">
+
+            <select id="contextSelection">
+                <option>Home</option>
+                <option>Work</option>
+                <option>Transport</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div id="notificationViewer">
+        <div id="sourceApp"></div>
+        <div id="sender"></div>
+        <div id="notificationContent"></div>
+    </div>
+
+    <div class="row">
+
+        <button type="button" class="btn btn-success btn-md" onclick="onChoice(1)">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+
+        <button type="button" class="btn btn-danger btn-md" onclick="onChoice(0)">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+    </div>
+
+    <div id="inputDisplay">
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
