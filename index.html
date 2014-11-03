@@ -22,7 +22,7 @@
 				<div class="col-md-6" id="phone">
 					<div id="outerPhone">
 						<div id="content">
-							<div class="notification home">
+							<div class="notification home" ng-show="myInput == 'home'">
 								<p>home</p>
 							</div>
 							<div class="notification work">
@@ -112,8 +112,7 @@
 									Busy (in a meeting etc.)
 								</label>
 							</div>
-							<input type="text" ng-model="myInput" /> {{myInput}}
-							<button ng-click="submitform()" class="btn" ng-class="{'btn-success' : color=='red'}">reload</button>
+							<input type="text" ng-model="myInput" />
 						</div>
 					</form>
 					<pre>

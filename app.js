@@ -5,7 +5,8 @@
 		$scope.formData = [];
 		
 		$scope.myInput = '';
-		$scope.$watch('myInput', function() {
+		$scope.homeVal = 'home';
+		$scope.$watch('myInput', function(){
 			$scope.formData.push($scope.myInput);
 		});
 		
