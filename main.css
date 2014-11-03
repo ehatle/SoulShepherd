@@ -46,9 +46,3 @@ body {
 .busy {
 	background-color: #00AAAA;
 }
-.hide {
-	display:none;
-}
-.show {
-	display:inherit;
-}
