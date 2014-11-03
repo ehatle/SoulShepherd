@@ -96,19 +96,19 @@
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="work" ngmodel="myInput">
+									<input type="radio" name="context" value="work" ng-model="myInput">
 									Work
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="street" ngmodel="myInput">
+									<input type="radio" name="context" value="street" ng-model="myInput">
 									On the streets
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="busy" ngmodel="myInput">
+									<input type="radio" name="context" value="busy" ng-model="myInput">
 									Busy (in a meeting etc.)
 								</label>
 							</div>
@@ -117,7 +117,7 @@
 						</div>
 					</form>
 					<pre>
-    					<div ng-repeat="item in formData">
+    					<div ng-repeat="item in formData track by $index">
     						<div>
     							{{item}}
     						</div>
