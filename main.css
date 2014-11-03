@@ -2,10 +2,13 @@
 
 body {
 	margin:0;
-	/*padding:2% 400px 2% 400px;*/
-	display:inline-block;
 	background-color: #FFF;
 }
+
+.row {
+	margin-top: 20px;
+}
+
 .container {
 	margin:auto;
 }
@@ -27,7 +30,7 @@ body {
 }
 #content {
 	background-color:#FFF;
-	height:500px;
+	height:450px;
 	overflow:auto;
 }
 .notification {
