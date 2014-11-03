@@ -96,32 +96,30 @@
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="work" ngmodel="myInput">
+									<input type="radio" name="context" value="work" ng-model="myInput">
 									Work
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="street" ngmodel="myInput">
+									<input type="radio" name="context" value="street" ng-model="myInput">
 									On the streets
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="context" value="busy" ngmodel="myInput">
+									<input type="radio" name="context" value="busy" ng-model="myInput">
 									Busy (in a meeting etc.)
 								</label>
 							</div>
 							<input type="text" ng-model="myInput" />
 						</div>
 					</form>
-					<pre>
-    					<div ng-repeat="item in formData">
-    						<div>
-    							{{item}}
-    						</div>
+    				<div ng-repeat="item in formData">
+    					<div>
+    						{{item}}
     					</div>
-					</pre>
+    				</div>
 				</div>
 			</div>
 		</div>
