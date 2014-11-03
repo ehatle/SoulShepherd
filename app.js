@@ -4,7 +4,7 @@
 	app.controller('form-controller', function($scope) {
 		$scope.formData = [];
 		
-		$scope.myInput = '';
+		$scope.myInput = 'home';
 		$scope.$watch('myInput', function(){
 			$scope.formData.push($scope.myInput);
 		});
