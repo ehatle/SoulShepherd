@@ -22,65 +22,10 @@
         <div class="col-md-3 col-md-offset-1" id="phone">
             <div id="outerPhone">
                 <div id="content">
-                    <div class="notification home" ng-show="myInput == 'home'">
-                        <p>home</p>
-                    </div>
-                    <div class="notification work">
-                        <p>work</p>
-                    </div>
-                    <div class="notification street">
-                        <p>street</p>
-                    </div>
-                    <div class="notification street busy">
-                        <p>busy</p>
-                    </div>
-                    <div class="notification home">
-                        <p>home</p>
-                    </div>
-                    <div class="notification work">
-                        <p>work</p>
-                    </div>
-                    <div class="notification street">
-                        <p>street</p>
-                    </div>
-                    <div class="notification busy">
-                        <p>busy</p>
-                    </div>
-                    <div class="notification home">
-                        <p>home</p>
-                    </div>
-                    <div class="notification work">
-                        <p>work</p>
-                    </div>
-                    <div class="notification street">
-                        <p>street</p>
-                    </div>
-                    <div class="notification busy">
-                        <p>busy</p>
-                    </div>
-                    <div class="notification home">
-                        <p>home</p>
-                    </div>
-                    <div class="notification work">
-                        <p>work</p>
-                    </div>
-                    <div class="notification street">
-                        <p>street</p>
-                    </div>
-                    <div class="notification busy">
-                        <p>busy</p>
-                    </div>
-                    <div class="notification home">
-                        <p>home</p>
-                    </div>
-                    <div class="notification work">
-                        <p>work</p>
-                    </div>
-                    <div class="notification street">
-                        <p>street</p>
-                    </div>
-                    <div class="notification busy">
-                        <p>busy</p>
+                    <div ng-repeat="not in notifications | filter: { context: search } track by $index">
+                        <div class="notification {{not.context}}">
+                            <p>{{not.sender}}: {{not.text}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,29 +35,29 @@
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="context" value="home" ng-model="myInput">
+                            <input type="radio" name="context" value="home" ng-model="search">
                             Home
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="context" value="work" ng-model="myInput">
+                            <input type="radio" name="context" value="work" ng-model="search">
                             Work
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="context" value="street" ng-model="myInput">
+                            <input type="radio" name="context" value="street" ng-model="search">
                             On the streets
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="context" value="busy" ng-model="myInput">
+                            <input type="radio" name="context" value="busy" ng-model="search">
                             Busy (in a meeting etc.)
                         </label>
                     </div>
-                    <input type="text" ng-model="myInput"/>
+                    <input type="text" ng-model="search"/>
                 </div>
             </form>
             <div ng-repeat="item in formData track by $index">
