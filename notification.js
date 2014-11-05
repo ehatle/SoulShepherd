@@ -15,8 +15,7 @@ var appArray = ["Facebook", "SMS", "SnapChat", "eMail"];
 
 function pickRandomApp()
 {
-    var randomElement = Math.floor(Math.random()*appArray.length);
-    return appArray[randomElement];
+    return appArray[Math.floor(Math.random()*appArray.length)];
 }
 
 function newNotification()

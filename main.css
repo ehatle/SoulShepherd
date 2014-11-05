@@ -34,18 +34,27 @@ body {
 	overflow:auto;
 }
 .notification {
-	background-color: #000;
+	background-color: #AAAAAA;
 	height:50px;
 }
-.home {
-	background-color: #00FF00;
+.Game {
+	background-color: #cc33cc;
 }
-.work {
-	background-color: #FF0000;
+.SnapChat {
+	background-color: #FFF000;
 }
-.street {
-	background-color: #0000FF;
+.Facebook {
+	background-color: #6699ff;
 }
-.busy {
-	background-color: #00AAAA;
+.Call {
+	background-color: #00AA00;
+}
+.Calendar {
+	background-color: #cc3333;
+}
+.SMS {
+	background-color: #FF9900;
+}
+.e-mail {
+	background-color: #7AF6F5;
 }

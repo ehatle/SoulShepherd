@@ -4,28 +4,55 @@
 	app.controller('form-controller', function($scope) {
 		$scope.formData = [];
 
-		$scope.notifications = [{sender:'John', text:'text from john', context: "home"},
-			{sender:'Mary', text:'text from mary', context: "home"},
-			{sender:'Mike', text:'text from mike', context: "home"},
-			{sender:'Adam', text:'text from adam', context: "home"},
-			{sender:'Julie', text:'text from julie', context: "home"},
-			{sender:'Juliette', text:'text from juliette', context: "home"},
-			{sender:'Mary', text:'text from mary', context: "work"},
-			{sender:'Mike', text:'text from mike', context: "work"},
-			{sender:'Adam', text:'text from adam', context: "work"},
-			{sender:'Julie', text:'text from julie', context: "work"},
-			{sender:'Juliette', text:'text from juliette', context: "work"},
-			{sender:'Mary', text:'text from mary', context: "street"},
-			{sender:'Mike', text:'text from mike', context: "street"},
-			{sender:'Adam', text:'text from adam', context: "street"},
-			{sender:'Julie', text:'text from julie', context: "street"},
-			{sender:'Juliette', text:'text from juliette', context: "street"},
-			{sender:'Mary', text:'text from mary', context: "busy"},
-			{sender:'Mike', text:'text from mike', context: "busy"},
-			{sender:'Adam', text:'text from adam', context: "busy"},
-			{sender:'Julie', text:'text from julie', context: "busy"},
-			{sender:'Juliette', text:'text from juliette', context: "busy"}
-		];
+		$scope.notifications = [];
+		
+		var num = 100;
+		var names = ['Dad', 'Mom', 'John', 'Mary', 'Mike', 'Adam', 'Julie', 'Juliette', 'Jack', 'Ola', 'Sarah', 'Josh', 'Kim', 'Tim', 'Lena', 'Bastien', 'Jean-Charles', 'Jun', 'Emil'];
+		var apps = ['Facebook', 'SMS', 'SnapChat', 'e-mail', 'Call', 'Calendar', 'Game'];
+		var contexts = ['home', 'work', 'street', 'busy'];
+		function rndNum(seed) {
+			return Math.floor(Math.random()*seed);
+		}
+		function rndNot() {
+			var sender = apps[rndNum(apps.length)];
+			var val = names[rndNum(names.length)];
+			var context = contexts.slice(0);
+			switch(sender){
+				case 'Facebook':
+					context.splice(context.indexOf('work'), 1);
+					context.splice(context.indexOf('busy'), 1);
+					context.splice(context.indexOf('street'), 1);
+					break;
+				case 'SMS':
+					context.splice(context.indexOf('busy'), 1);
+					break;
+				case 'SnapChat':
+					context.splice(context.indexOf('work'), 1);
+					context.splice(context.indexOf('busy'), 1);
+					context.splice(context.indexOf('street'), 1);
+					break;
+				case 'e-mail':
+					context.splice(context.indexOf('home'), 1);
+					context.splice(context.indexOf('street'), 1);
+					break;
+				case 'Call':
+					context.splice(context.indexOf('busy'), 1);
+					break;
+				case 'Calendar':
+					context.splice(context.indexOf('work'), 1);
+					context.splice(context.indexOf('busy'), 1);
+					break;
+				case 'Game':
+					context.splice(context.indexOf('work'), 1);
+					context.splice(context.indexOf('busy'), 1);
+					context.splice(context.indexOf('street'), 1);
+					break;
+			}
+			return {sender: sender, text:'Notification from ' + val, context: context};
+		}
+		for (i = 0; i < num; i++){
+			$scope.notifications.push(rndNot());
+		}
 		
 		$scope.search = 'home';
 

@@ -23,7 +23,7 @@
             <div id="outerPhone">
                 <div id="content">
                     <div ng-repeat="not in notifications | filter: { context: search } track by $index">
-                        <div class="notification {{not.context}}">
+                        <div class="notification {{not.sender}}">
                             <p>{{not.sender}}: {{not.text}}</p>
                         </div>
                     </div>
