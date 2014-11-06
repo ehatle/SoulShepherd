@@ -3,6 +3,7 @@
  */
 
 var currentNotif;
+var notificationArray = [];
 
 function Notification(sourceApp, sender, content) {
     // Public properties, assigned to the instance ('this')
@@ -11,30 +12,72 @@ function Notification(sourceApp, sender, content) {
     this.content = content;
 }
 
-var appArray = ["Messenger", "SMS", "SnapChat", "eMail", "Calendar Alarm", "Game", "Facebook"];
 
-function pickRandomApp()
+
+function pickRandomNotif()
 {
-    return appArray[Math.floor(Math.random()*appArray.length)];
+    var index = Math.floor(Math.random()*notificationArray.length);
+
+    for(var i= index; i > 0; i--)
+    {
+        if(notificationArray[i].used==0)
+        {
+            notificationArray[i].used=1;
+            return notificationArray[i].notification;
+        }
+    }
+    for(var i= index; i < notificationArray.length; i++)
+    {
+        if(notificationArray[i].used==0)
+        {
+            notificationArray[i].used=1;
+            return notificationArray[i].notification;
+        }
+    }
+
+    return new Notification("All done !","No more notification","All the notifications have been evaluated. Congratulation");
 }
 
 function newNotification()
 {
-    var sourceApp = pickRandomApp();
-    currentNotif = new Notification(sourceApp, "Mom", "no content");
-
+    currentNotif = pickRandomNotif();
     replaceOnScreen();
 }
 
 function replaceOnScreen()
 {
     $('#sourceApp').text(currentNotif.sourceApp);
-    $('#sender').text(currentNotif.sender);
+    if(currentNotif.sender != "")
+    {
+        $('#sender').text("From: " + currentNotif.sender);
+    }
+    else
+    {
+        $('#sender').text("");
+    }
     $('#notificationContent').text(currentNotif.content);
 }
 
 $(document).ready( function()
     {
+        loadDB();
         newNotification();
 
     });
+
+function loadDB()
+{
+    for(var i= 0; i < notificationDB.length; i++)
+    {
+        var notif= new Notification(notificationDB[i][0],notificationDB[i][1],notificationDB[i][2])
+        notificationArray.push({notification:notif , used:0});
+    }
+}
+
+var notificationDB = [
+    ["Messenger", "John", "Want to hang out tonight ?"],
+    ["Messenger", "Clark", "Hey ! we should meet for the INF5261 project !"],
+    ["Messenger", "Clara", "Hi, shall we go to cinema this evening ?"],
+    ["Messenger", "Mike", "Men ! Kim felt down the stairs !"]
+
+];

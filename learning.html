@@ -26,47 +26,58 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6" id="menu">
 
-            <select id="contextSelection">
-                <option>Home</option>
-                <option>Work</option>
-                <option>Transport</option>
-
-            </select>
-        </div>
-
-        <div class="col-md-6">
+        <div class="col-md-1 inline">
             <button type="button" class="btn btn-default btn-md" onclick="saveToDisk()">
                 <span class="glyphicon glyphicon-floppy-save"></span>
             </button>
+        </div>
 
-            <input type="file" id='fileInput' name="files" accept=".json"/>
+        <div class="col-md-2 inline">
+            <input type="file" id='fileInput' name="files" accept=".json" class="inline"/>
+        </div>
 
+        <div class="col-md-1 inline">
             <button type="button" class="btn btn-default btn-md" onclick="openFile()">
                 <span class="glyphicon glyphicon-folder-open"></span>
             </button>
-
         </div>
 
     </div>
 
-    <div id="notificationViewer">
-        <div id="sourceApp"></div>
-        <div id="sender"></div>
-        <div id="notificationContent"></div>
-    </div>
+    <div class = "row">
+        <div class="col-lg-12">
 
-    <div class="row">
+            <div id="phone">
+                <div id="outerPhone">
+                    <div id="content">
 
-        <button type="button" class="btn btn-success btn-md" onclick="onChoice(1)">
-            <span class="glyphicon glyphicon-ok"></span>
-        </button>
+                        <div id="menu">
+                            <select id="contextSelection">
+                                <option>Home</option>
+                                <option>Work</option>
+                                <option>Transport</option>
+                            </select>
+                        </div>
 
-        <button type="button" class="btn btn-danger btn-md" onclick="onChoice(0)">
-            <span class="glyphicon glyphicon-remove"></span>
-        </button>
+                        <div id="notificationViewer">
+                            <div id="sourceApp"></div>
+                            <div id="sender"></div>
+                            <div id="notificationContent"></div>
+                        </div>
 
+                        <div id="userInput">
+                            <button type="button" class="btn btn-success btn-md" onclick="onChoice(1)">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-md" onclick="onChoice(0)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="inputDisplay">

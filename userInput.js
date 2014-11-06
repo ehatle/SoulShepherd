@@ -22,9 +22,12 @@ function userInput(notification, context, result)
 function onChoice(result)
 {
     var currentInput = new userInput(currentNotif, $('#contextSelection').find(":selected").text(), result)
-    inputArray.push(currentInput);
+    if(currentNotif.sourceApp != "All done !")
+    {
+        inputArray.push(currentInput);
+    }
 
-    $('#inputDisplay').text(JSON.stringify(inputArray));
+    $('#inputDisplay').text("Number of input: " + inputArray.length);
 
     newNotification();
 }

@@ -16,11 +16,10 @@ body {
 	border:1px solid #00000;
 	-moz-border-radius:50px;
 	border-radius:50px;
-	/*width:350px;*/
+	width:350px;
 	padding: 10px 10px 10px 10px;
 	background-color: #AAAAAA;
-	-moz-border-radius:50px;
-	border-radius:50px;
+	position: center;
 }
 #outerPhone {
 	padding: 100px 30px 40px 30px;
@@ -57,4 +56,51 @@ body {
 }
 .e-mail {
 	background-color: #7AF6F5;
+}
+
+.inline
+{
+	display: inline-block;
+}
+
+#menu
+{
+	width: 100%;
+	marging-top:10px;
+	margin-bottom: 10px;
+}
+#contextSelection
+{
+	width: 100%;
+}
+
+#notificationViewer
+{
+	margin-left:10%;
+	margin-right: 10%;
+	margin-top: 100px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border:1px solid lightgrey;
+	background: #EEE;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+#userInput
+{
+	text-align: center;
+}
+#sourceApp
+{
+	font-weight: bold;
+}
+#sender
+{
+	font:bold;
+}
+#notificationContent
+{
+	margin-top:5px;
+	padding-top: 5px;
+	border-top: solid lightgrey 1px;
 }
