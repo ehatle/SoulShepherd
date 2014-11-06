@@ -11,7 +11,7 @@ function Notification(sourceApp, sender, content) {
     this.content = content;
 }
 
-var appArray = ["Facebook", "SMS", "SnapChat", "eMail"];
+var appArray = ["Messenger", "SMS", "SnapChat", "eMail", "Calendar Alarm", "Game", "Facebook"];
 
 function pickRandomApp()
 {

@@ -28,3 +28,18 @@ function onChoice(result)
 
     newNotification();
 }
+
+function saveToDisk()
+{
+    var blob = new Blob([JSON.stringify(inputArray)], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "SoulShepherd.json");
+}
+
+function openFile()
+{
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        console.log("file API ok");
+    } else {
+        console.log('The File APIs are not fully supported in this browser.');
+    }
+}
