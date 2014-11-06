@@ -43,3 +43,28 @@ function openFile()
         console.log('The File APIs are not fully supported in this browser.');
     }
 }
+
+function readSingleFile(evt) {
+    //Retrieve the first (and only!) File from the FileList object
+    var file = evt.target.files[0];
+
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(){
+                var text = reader.result;
+                console.log(text);
+                inputArray = JSON.parse(text);
+        }
+
+        reader.readAsText(file);
+
+    } else {
+        alert("Failed to load file");
+    }
+}
+
+$( document ).ready(function() {
+    document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
+});
+
+
