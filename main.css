@@ -82,7 +82,15 @@ body {
 	margin : auto;
 	width: 150px;
 	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
+}
+
+.button-outside-phone
+{
+	width: 150px;
+	margin : auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
 
 #contextSelection
@@ -94,6 +102,7 @@ body {
 {
 	margin-left:10%;
 	margin-right: 10%;
+	margin-top: 10px;
 }
 
 .spaceTop
