@@ -18,7 +18,7 @@ function pickRandomNotif()
 {
     var index = Math.floor(Math.random()*notificationArray.length);
 
-    for(var i= index; i > 0; i--)
+    for(var i= index; i >= 0; i--)
     {
         if(notificationArray[i].used==0)
         {
@@ -46,24 +46,18 @@ function newNotification()
 
 function replaceOnScreen()
 {
-    $('#sourceApp').text(currentNotif.sourceApp);
+    $('.sourceApp').text(currentNotif.sourceApp);
     if(currentNotif.sender != "")
     {
-        $('#sender').text("From: " + currentNotif.sender);
+        $('.sender').text("From: " + currentNotif.sender);
     }
     else
     {
-        $('#sender').text("");
+        $('.sender').text("");
     }
-    $('#notificationContent').text(currentNotif.content);
+    $('.notificationContent').text(currentNotif.content);
 }
 
-$(document).ready( function()
-    {
-        loadDB();
-        newNotification();
-
-    });
 
 function loadDB()
 {
@@ -72,6 +66,21 @@ function loadDB()
         var notif= new Notification(notificationDB[i][0],notificationDB[i][1],notificationDB[i][2])
         notificationArray.push({notification:notif , used:0});
     }
+}
+
+function fillAllNotif()
+{
+    for(var i=0; i<notificationArray.length; i++)
+    {
+        $('#allNotif').append(htmlFromNotif(notificationArray[i].notification));
+    }
+}
+
+function htmlFromNotif(notif)
+{
+    var htmlDisplay = "<div class=\"singleNotification\"><div class=\"sourceApp\">" + notif.sourceApp + "</div><div class=\"sender\">" + notif.sender + "</div><div class=\"notificationContent\">" + notif.content + "</div></div>";
+    console.log(htmlDisplay);
+    return htmlDisplay;
 }
 
 var notificationDB = [

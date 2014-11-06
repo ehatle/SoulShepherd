@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <title>SoulShepherd - Learning</title>
+    <title>SoulShepherd - Filter</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,9 +20,7 @@
     <script src="app.js"></script>
     <script src="notification.js"></script>
     <script src="userInput.js"></script>
-
 </head>
-
 <body>
 <div class="container">
 
@@ -47,40 +45,44 @@
     </div>
 
     <div class = "row">
-        <div class="col-lg-12">
+        <div class="col-lg-5">
 
             <div class="phone">
                 <div class="outerPhone">
                     <div class="content">
+                        <div id="allNotif" class="notificationViewer">
 
-                        <div id="menu" class="intside-phone">
-                            <select id="contextSelection">
-                                <option>Home</option>
-                                <option>Work</option>
-                                <option>Transport</option>
-                            </select>
-                        </div>
-
-                        <div class="notificationViewer spaceTop">
-                            <div class="singleNotification">
-                                <div class="sourceApp"></div>
-                                <div class="sender"></div>
-                                <div class="notificationContent"></div>
-                            </div>
-                        </div>
-
-                        <div id="userInput">
-                            <button type="button" class="btn btn-success btn-md" onclick="onChoice(1)">
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-md" onclick="onChoice(0)">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-2">
+            <div id="menu" class="outside-phone">
+                <select id="contextSelection">
+                    <option>Home</option>
+                    <option>Work</option>
+                    <option>Transport</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+
+            <div class="phone">
+                <div class="outerPhone">
+                    <div class="content">
+
+                        <div id="filteredNotif" class="notificationViewer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <div id="inputDisplay">
@@ -95,7 +97,7 @@
     $(document).ready( function()
     {
         loadDB();
-        newNotification();
+        fillAllNotif();
     });
 
 </script>
