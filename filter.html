@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>SoulShepherd - Filter</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SoulShepherd Prototype">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/blob/blob.js"></script>
+    <script src="lib/FileSaver/FileSaver.js"></script>
+    <script src="app.js"></script>
+    <script src="notification.js"></script>
+    <script src="userInput.js"></script>
+    <script src="filter.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12 inline">
+            <button type="button" class="btn btn-default btn-md" onclick="saveToDisk()">
+                <span class="glyphicon glyphicon-floppy-save"></span>
+            </button>
+
+            <label for="fileInput">
+                <div id="image">
+                    <div  class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                    </div>
+                </div>
+            </label>
+            <input type="file" id="fileInput" name="files" accept=".json" class="inline" style="display:none" />
+            <span class="inputDisplay">
+                <span>Number of inputs:&nbsp</span><span id="sizeInputArray">0</span>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5">
+
+            <div class="phone">
+                <div class="outerPhone">
+                    <div class="content">
+                        <div id="allNotif" class="notificationViewer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notifAmount">
+                <span id="allNotifAmount">0</span><span>&nbsp;notifications</span>
+            </div>
+        </div>
+
+        <div class="col-lg-2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="menu" class="outside-phone">
+                        <select id="contextSelection">
+                            <option>Home</option>
+                            <option>Work</option>
+                            <option>Transport</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12" style="text-align: center;">
+                        <button type="button" class="btn btn-success button-outside-phone" onclick="refreshFilter()">
+                            <span class="glyphicon glyphicon-refresh"></span> Apply filter
+                        </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-5">
+
+            <div class="phone">
+                <div class="outerPhone">
+                    <div class="content">
+
+                        <div id="filteredNotif" class="notificationViewer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notifAmount">
+                <span id="filterNotifAmount">0</span><span>&nbsp;notifications</span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="inputDisplay">
+
+    </div>
+
+</div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        loadDB();
+        fillAllNotif();
+        refreshNotifAmount();
+    });
+
+</script>
+
+</html>

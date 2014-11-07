@@ -20,27 +20,30 @@
     <script src="app.js"></script>
     <script src="notification.js"></script>
     <script src="userInput.js"></script>
+
 </head>
 
-<body ng-controller="form-controller">
+<body>
 <div class="container">
 
     <div class="row">
 
-        <div class="col-md-1 inline">
+        <div class="col-md-12 inline">
             <button type="button" class="btn btn-default btn-md" onclick="saveToDisk()">
                 <span class="glyphicon glyphicon-floppy-save"></span>
             </button>
-        </div>
 
-        <div class="col-md-2 inline">
-            <input type="file" id='fileInput' name="files" accept=".json" class="inline"/>
-        </div>
-
-        <div class="col-md-1 inline">
-            <button type="button" class="btn btn-default btn-md" onclick="openFile()">
-                <span class="glyphicon glyphicon-folder-open"></span>
-            </button>
+            <label for="fileInput">
+                <div id="image">
+                    <div  class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                    </div>
+                </div>
+            </label>
+            <input type="file" id="fileInput" name="files" accept=".json" class="inline" style="display:none" />
+            <span class="inputDisplay">
+                <span>Number of inputs:&nbsp</span><span id="sizeInputArray">0</span>
+            </span>
         </div>
 
     </div>
@@ -48,11 +51,11 @@
     <div class = "row">
         <div class="col-lg-12">
 
-            <div id="phone">
-                <div id="outerPhone">
-                    <div id="content">
+            <div class="phone">
+                <div class="outerPhone">
+                    <div class="content">
 
-                        <div id="menu">
+                        <div id="menu" class="intside-phone">
                             <select id="contextSelection">
                                 <option>Home</option>
                                 <option>Work</option>
@@ -60,10 +63,12 @@
                             </select>
                         </div>
 
-                        <div id="notificationViewer">
-                            <div id="sourceApp"></div>
-                            <div id="sender"></div>
-                            <div id="notificationContent"></div>
+                        <div class="notificationViewer spaceTop">
+                            <div class="singleNotification">
+                                <div class="sourceApp"></div>
+                                <div class="sender"></div>
+                                <div class="notificationContent"></div>
+                            </div>
                         </div>
 
                         <div id="userInput">
@@ -79,13 +84,17 @@
             </div>
         </div>
     </div>
-
-    <div id="inputDisplay">
-
-    </div>
-
 </div>
 
-
 </body>
+
+<script>
+    $(document).ready( function()
+    {
+        loadDB();
+        newNotification();
+    });
+
+</script>
+
 </html>

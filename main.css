@@ -12,7 +12,7 @@ body {
 .container {
 	margin:auto;
 }
-#phone {
+.phone {
 	border:1px solid #00000;
 	-moz-border-radius:50px;
 	border-radius:50px;
@@ -20,14 +20,15 @@ body {
 	padding: 10px 10px 10px 10px;
 	background-color: #AAAAAA;
 	position: center;
+	margin:auto;
 }
-#outerPhone {
+.outerPhone {
 	padding: 100px 30px 40px 30px;
 	background-color: #000;
 	-moz-border-radius:50px;
 	border-radius:50px;
 }
-#content {
+.content {
 	background-color:#FFF;
 	height:450px;
 	overflow:auto;
@@ -65,20 +66,52 @@ body {
 
 #menu
 {
+
+}
+
+.inside-phone
+{
 	width: 100%;
+	margin: auto;
 	marging-top:10px;
 	margin-bottom: 10px;
 }
+
+.outside-phone
+{
+	margin : auto;
+	width: 150px;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.button-outside-phone
+{
+	width: 150px;
+	margin : auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
 #contextSelection
 {
 	width: 100%;
 }
 
-#notificationViewer
+.notificationViewer
 {
 	margin-left:10%;
 	margin-right: 10%;
+	margin-top: 10px;
+}
+
+.spaceTop
+{
 	margin-top: 100px;
+}
+
+.singleNotification
+{
 	margin-bottom: 10px;
 	padding: 5px;
 	border:1px solid lightgrey;
@@ -86,21 +119,29 @@ body {
 	-moz-border-radius:10px;
 	border-radius:10px;
 }
+
 #userInput
 {
 	text-align: center;
 }
-#sourceApp
+.sourceApp
 {
 	font-weight: bold;
 }
-#sender
+.sender
 {
 	font:bold;
 }
-#notificationContent
+.notificationContent
 {
 	margin-top:5px;
 	padding-top: 5px;
 	border-top: solid lightgrey 1px;
+}
+
+.notifAmount
+{
+	margin : auto;
+	margin-top : 10px;
+	text-align: center;
 }
