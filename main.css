@@ -138,3 +138,10 @@ body {
 	padding-top: 5px;
 	border-top: solid lightgrey 1px;
 }
+
+.notifAmount
+{
+	margin : auto;
+	margin-top : 10px;
+	text-align: center;
+}

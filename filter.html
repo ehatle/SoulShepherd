@@ -27,20 +27,22 @@
 
     <div class="row">
 
-        <div class="col-md-1 inline">
+        <div class="col-md-12 inline">
             <button type="button" class="btn btn-default btn-md" onclick="saveToDisk()">
                 <span class="glyphicon glyphicon-floppy-save"></span>
             </button>
-        </div>
 
-        <div class="col-md-2 inline">
-            <input type="file" id='fileInput' name="files" accept=".json" class="inline"/>
-        </div>
-
-        <div class="col-md-1 inline">
-            <button type="button" class="btn btn-default btn-md" onclick="openFile()">
-                <span class="glyphicon glyphicon-folder-open"></span>
-            </button>
+            <label for="fileInput">
+                <div id="image">
+                    <div  class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                    </div>
+                </div>
+            </label>
+            <input type="file" id="fileInput" name="files" accept=".json" class="inline" style="display:none" />
+            <span class="inputDisplay">
+                <span>Number of inputs:&nbsp</span><span id="sizeInputArray">0</span>
+            </span>
         </div>
 
     </div>
@@ -56,6 +58,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="notifAmount">
+                <span id="allNotifAmount">0</span><span>&nbsp;notifications</span>
             </div>
         </div>
 
@@ -94,6 +99,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="notifAmount">
+                <span id="filterNotifAmount">0</span><span>&nbsp;notifications</span>
             </div>
         </div>
 

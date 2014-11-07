@@ -19,9 +19,12 @@ function refreshFilter()
     {
         if(filter(notificationArray[i].notification, $('#contextSelection').find(":selected").text() ) === 1)
         {
-            $('#filteredNotif').append(htmlFromNotif(notificationArray[i].notification));
+            filteredNotification.push((notificationArray[i].notification));
         }
     }
+
+    refreshDisplay();
+    refreshNotifAmount();
 }
 
 function initializeFilter()
@@ -32,4 +35,18 @@ function initializeFilter()
 function filter(notif, cont)
 {
     return 1;
+}
+
+function refreshDisplay()
+{
+    for(var i=0; i<filteredNotification.length; i++)
+    {
+        $('#filteredNotif').append(htmlFromNotif(filteredNotification[i]));
+    }
+}
+
+function refreshNotifAmount()
+{
+    $('#allNotifAmount').text(notificationArray.length);
+    $('#filterNotifAmount').text(filteredNotification.length);
 }

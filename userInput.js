@@ -27,7 +27,7 @@ function onChoice(result)
         inputArray.push(currentInput);
     }
 
-    $('#inputDisplay').text("Number of input: " + inputArray.length);
+    refreshInputNumber();
 
     newNotification();
 }
@@ -57,6 +57,7 @@ function readSingleFile(evt) {
                 var text = reader.result;
                 console.log(text);
                 inputArray = JSON.parse(text);
+                refreshInputNumber();
         }
 
         reader.readAsText(file);
@@ -70,4 +71,7 @@ $( document ).ready(function() {
     document.getElementById('fileInput').addEventListener('change', readSingleFile, false);
 });
 
-
+function refreshInputNumber()
+{
+    $('#sizeInputArray').text(inputArray.length);
+}
