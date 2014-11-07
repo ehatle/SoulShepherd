@@ -79,7 +79,6 @@ function fillAllNotif()
 function htmlFromNotif(notif)
 {
     var htmlDisplay = "<div class=\"singleNotification\"><div class=\"sourceApp\">" + notif.sourceApp + "</div><div class=\"sender\">" + notif.sender + "</div><div class=\"notificationContent\">" + notif.content + "</div></div>";
-    console.log(htmlDisplay);
     return htmlDisplay;
 }
 
