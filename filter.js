@@ -32,7 +32,7 @@ function initializeFilter()
 
 }
 
-function filter(notif, cont)
+function filter(notif, context)
 {
     return 1;
 }

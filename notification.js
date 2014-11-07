@@ -83,9 +83,41 @@ function htmlFromNotif(notif)
 }
 
 var notificationDB = [
-    ["Messenger", "John", "Want to hang out tonight ?"],
-    ["Messenger", "Clark", "Hey ! we should meet for the INF5261 project !"],
-    ["Messenger", "Clara", "Hi, shall we go to cinema this evening ?"],
-    ["Messenger", "Mike", "Men ! Kim felt down the stairs !"]
+    ["Messenger", "John (friend)", "HEEEEEEEEEYEYZZZ ! WAZZZZZZZUP ! dfgh"],
+    ["Messenger", "Clark (friend)", "Hey ! How are you ? Last night was an hell of a party !"],
+    ["Messenger", "Mike (friend)", "Hey ! we should meet for the INF5261 project !"],
+    ["Messenger", "Clara (aunt)", "Hi sweety ! Are you coming at Granny's this week-end ?"],
+    ["Messenger", "Alex (SO)", "Hey ;) You want to go to the theatre this evening ?"],
+    ["Messenger", "Bob (colleague)", "Hello ? Are you here ? Why don't you answer my emails !"],
+
+    ["Apps", "SnapChat", "You have 3 new Snaps waiting"],
+    ["Apps", "SnapChat", "Alex sent you a Snap"],
+    ["Apps", "CandyCrush", "It's been a long time since last time ! Come back and play !"],
+    ["Apps", "CandyCrush", "Clark sent you a new life"],
+    ["Apps", "Twitter", "Top trends of the week"],
+    ["Apps", "Twitter", "3 people retweeted you"],
+
+    ["Facebook", "Clark (friend)", "Clark tagged you in 15 new photos"],
+    ["Facebook", "Mike (friend)", "Mike added you to the group INF5261-Project"],
+    ["Facebook", "Clark (friend)", "Clark invited you to the event Jen-Birthday"],
+    ["Facebook", "Alex (SO)", "Alex posted a link on your timeline"],
+    ["Facebook", "John (friend)", "John and you are now friends"],
+
+
+    ["SMS", "Mom", "Uncle Joe is at the hospital ! Call me now"],
+    ["SMS", "Mom", "Could you buy some eggs on the way back ?"],
+    ["SMS", "Alex (SO)", "Miss you ! See you this evening"],
+    ["SMS", "Alex (SO)", "Did you remembered to book the theatre ?"],
+    ["SMS", "John (friend)", "Oooh maaan ! I'm soooo wazted righht noww !"],
+    ["SMS", "Clara (aunt)", "My train arrives at 7. I will be at Grandma around 9"],
+
+    ["eMail", "Bob (colleague)", "About the new feature for the project, how should we proceed ?"],
+    ["eMail", "Mark (boss)", "Meeting tomorrow at 10"],
+    ["eMail", "Clark (friend)", "Hi dude. Jen is doing a birthday party next week, you want to come ?"],
+    ["eMail", "Mom", "Hi sweetheart. I booked the plane tickets for your trip to NY next month"],
+    ["eMail", "LinkedIn", "You have a new relation pending : (old classmate)"],
+    ["eMail", "Mike (friend)", "Lenny will be late for the group presentation"],
+    ["eMail", "Marketing company", "Buy Our products ! Now !"],
+    
 
 ];
