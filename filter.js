@@ -26,10 +26,6 @@ function refreshFilter()
     currentContext = $('#contextSelection').find(":selected").text();
 
     initializeFilter();
-    console.log(historic);
-
-    //applyAllFilter();
-    //console.log(filteredNotification);
 
     for(var i=0; i<notificationArray.length; i++)
     {
@@ -38,11 +34,6 @@ function refreshFilter()
             finalList.push(notificationArray[i].notification);
         }
     }
-
-//   for(var i=0; i<filteredNotification[currentContext].length; i++)
-//   {
-//        finalList.push(filteredNotification[currentContext][i]);
-//    }
 
     refreshDisplay();
     refreshNotifAmount();
@@ -147,11 +138,13 @@ function filter(context, notification)
     var sendPro=0;
     var sendCon=0;
 
+
     if(historic[context] != undefined && historic[context][notification.sourceApp] != undefined)
     {
-        for(var i=0; i<historic[context][notification.sourceApp].length; i++)
+        for(key in historic[context][notification.sourceApp])
         {
-            if(historic[context][notification.sourceApp][i]==1)
+            var val = historic[context][notification.sourceApp][key];
+            if(val==1)
             {
                 appPro++;
             }
@@ -164,9 +157,10 @@ function filter(context, notification)
 
     if(historic[context] != undefined && historic[context][notification.sender] != undefined)
     {
-        for(var i=0; i<historic[context][notification.sender].length; i++)
+        for(key in historic[context][notification.sender])
         {
-            if(historic[context][notification.sender][i]==1)
+            var val=historic[context][notification.sender][key];
+            if(val==1)
             {
                 sendPro++;
             }
@@ -177,7 +171,10 @@ function filter(context, notification)
         }
     }
 
-    if( (appPro-appCon)*(appPro+appCon) + (sendPro-sendCon)*(sendCon+sendCon) >= 0)
+    var result = (appPro-appCon)*(appPro+appCon) + (sendPro-sendCon)*(sendCon+sendCon);
+    console.log("Score " + result+ " for : " + JSON.stringify(notification));
+
+    if( result >= 0)
     {
         return 1;
     }
