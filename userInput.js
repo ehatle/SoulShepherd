@@ -38,14 +38,6 @@ function saveToDisk()
     saveAs(blob, "SoulShepherd.json");
 }
 
-function openFile()
-{
-    if (window.File && window.FileReader && window.FileList && window.Blob) {
-        console.log("file API ok");
-    } else {
-        console.log('The File APIs are not fully supported in this browser.');
-    }
-}
 
 function readSingleFile(evt) {
     //Retrieve the first (and only!) File from the FileList object
@@ -55,8 +47,8 @@ function readSingleFile(evt) {
         var reader = new FileReader();
         reader.onload = function(){
                 var text = reader.result;
-                console.log(text);
                 inputArray = JSON.parse(text);
+                console.log(inputArray.length + " input loaded");
                 refreshInputNumber();
         }
 

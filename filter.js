@@ -197,14 +197,8 @@ function refreshDisplay()
 function refreshNotifAmount()
 {
     $('#allNotifAmount').text(notificationArray.length);
-    if(filteredNotification[currentContext])
-    {
-        $('#filterNotifAmount').text(filteredNotification[currentContext].length);
-    }
-    else
-    {
-        $('#filterNotifAmount').text("0");
-    }
+    $('#filterNotifAmount').text(finalList.length);
+
 
 }
 
