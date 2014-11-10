@@ -50,7 +50,7 @@ function initializeFilter()
         historic[n.context]['sender'][n.notification.sender].push(n.result);
     });
 
-    console.log(contexts.toString());
+    console.log(contexts);
 
     contexts.forEach(function (context) {
         // we create an entry for the context
@@ -113,14 +113,14 @@ function refreshDisplay()
 {
     for(var i=0; i<filteredNotification[currentContext].length; i++)
     {
-        $('#filteredNotif').append(htmlFromNotif(filteredNotification[currentContext][i]));
+        $('#filteredNotif').append(htmlFromNotif(filteredNotification[currentContext][i].notification));
     }
 }
 
 function refreshNotifAmount()
 {
     $('#allNotifAmount').text(notificationArray.length);
-    $('#filterNotifAmount').text(filteredNotification.length);
+    $('#filterNotifAmount').text(filteredNotification[currentContext].length);
 }
 
 function loadContextList()
