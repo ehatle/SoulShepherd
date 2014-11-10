@@ -118,6 +118,6 @@ var notificationDB = [
     ["eMail", "LinkedIn", "You have a new relation pending : (old classmate)"],
     ["eMail", "Mike (friend)", "Lenny will be late for the group presentation"],
     ["eMail", "Marketing company", "Buy Our products ! Now !"],
-    
+
 
 ];
